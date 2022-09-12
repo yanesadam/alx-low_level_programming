@@ -1,20 +1,23 @@
 #include <stdio.h>
-
 /**
- * main - Prints sum of fibo numbers under 4,000,000
+ * main - main block
+ * Description: computes and prints even  number < 4,000,000
+ * 5 below 1024 (excluded), followed by a new line
  * Return: 0
  */
 int main(void)
 {
-	long int f1 = 1, f2 = 2, sum = f2, tmp;
+	int a = 0, b = 1, next = 0;
+	int sum = 0;
 
-	while (f2 < 4000000)
+	while (next < 4000000)
 	{
-		tmp = f1 + f2;
-		f1 = f2;
-		f2 = tmp;
-		sum += (f2 % 2 == 0) ? f2 : 0;
+		next = a + b;
+		a = b;
+		b = next;
+		if (next % 2 == 0)
+			sum += next;
 	}
-	printf("%li\n", sum);
+	printf("%i\n", sum);
 	return (0);
 }
